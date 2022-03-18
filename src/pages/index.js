@@ -8,7 +8,7 @@ export async function getServerSideProps({req}) {
   if(session){
     return{
       redirect:{
-        destination: '/teste',
+        destination: '/app',
         permanent: false
       }
     }
@@ -22,8 +22,11 @@ export async function getServerSideProps({req}) {
 export default function Home() {
  
 
-  function handleSignIn() {
+  function handleSignInGoogle() {
     signIn("google");
+  }
+  function handleSignInLinkedin() {
+    signIn("linkedin");
   }
   return (
     <div>
@@ -33,7 +36,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Sign In</h1>
-      <button onClick={handleSignIn}>Sign in with Google</button>
+      <button onClick={handleSignInGoogle}>Sign in with Google</button>
+      <button onClick={handleSignInLinkedin}>Sign in with Linkeding</button>
      
     </div>
   );
