@@ -6,11 +6,12 @@ export const Button = styled.button`
     padding: 10px;
     font-size: 1.3rem;
     border-radius: 6px;
-   
+     
     
     span{
         font-size: 0.9rem;
-        margin-left: 5px;
+        margin-left: 8px;
+        
     }
   
 `;

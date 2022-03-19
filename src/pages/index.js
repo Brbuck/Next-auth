@@ -1,8 +1,16 @@
 import Head from "next/head";
+import Image from "next/image";
+import {
+  Container,
+  GoogleButton,
+  LinkedinButton,
+  Frame,
+  Sign,
+} from "../styles/index";
 
 import { getSession, signIn } from "next-auth/react";
-
-import { Container, EditGoogleButton, EditLinkedinButton, Sign } from "../styles/index";
+import GoogleImage from "../assets/google-logo.png";
+import LinkedinImage from "../assets/linkedin-logo.png";
 
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
@@ -37,9 +45,16 @@ export default function Home() {
       <Sign>
         <h1>Welcome!</h1>
         <span>Sign in with your account to access our platform</span>
-        <EditGoogleButton onClick={handleSignInGoogle}><span>Sign in with Google</span></EditGoogleButton>
-        <EditLinkedinButton onClick={handleSignInLinkedin}><span>Sign in with Linkeding</span></EditLinkedinButton>
+        <GoogleButton onClick={handleSignInGoogle}>
+          <Image src={GoogleImage} alt="Google Logo" width={18} height={16} />
+          <span>Sign in with Google</span>
+        </GoogleButton>
+        <LinkedinButton onClick={handleSignInLinkedin}>
+          <Image src={LinkedinImage} alt="Google Logo" width={18} height={16} />
+          <span>Sign in with Linkeding</span>
+        </LinkedinButton>
       </Sign>
+      <Frame />
     </Container>
   );
 }
