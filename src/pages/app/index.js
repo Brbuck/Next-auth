@@ -22,7 +22,6 @@ function test() {
   return (
     <div>
       <p>Dashboard</p>
-      <p>{JSON.stringify(data)}</p>
 
       <Link href="/app/test">
         <a>Home</a>

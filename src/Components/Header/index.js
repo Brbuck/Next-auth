@@ -1,32 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Navigation, Logo } from "./styles";
 import Image from "next/image";
 
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import Icon from "../../assets/logo.png";
+import ModalUser from "../ModalUser";
 
 function Header() {
-    const { data } = useSession();
+  const { data } = useSession();
+
+  const [showModalUser, setShowModalUser] = useState(false);
+  const togleShowModalUser = () => {
+    setShowModalUser(!showModalUser);
+  };
+
   return (
-    <Container>
-      <Logo>
-        <Image src={Icon} alt="Google Logo" width={35} height={30} />
-      </Logo>
-      <Navigation>
-        <li>Welcome back {data?.user?.name}</li>
-        <li>
-          <img src={data?.user?.image} alt="avatar" width="30px" />
-        </li>
-        <li>
-          <button
-            onClick={() => signOut({ callbackUrl: "http://localhost:3000/" })}
-          >
-            Sign out
-          </button>
-        </li>
-      </Navigation>
-    </Container>
+    <>
+      <Container>
+        <Logo>
+          <Image src={Icon} alt="Google Logo" width={35} height={30} />
+        </Logo>
+        <Navigation>
+          <li>Welcome back {data?.user?.name}</li>
+          <li>
+            <img
+              onClick={togleShowModalUser}
+              src={data?.user?.image}
+              alt="avatar"
+              width="32px"
+            />
+          </li>
+        </Navigation>
+      </Container>
+      {showModalUser && <ModalUser togleShowModalUser={togleShowModalUser} />}
+    </>
   );
 }
 

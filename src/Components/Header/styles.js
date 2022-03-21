@@ -6,11 +6,11 @@ export const Container = styled.header`
   justify-content: space-between;
 
   width: 100%;
-  height: auto;
+  height: 60px;
   padding: 10px 30px;
 
   background-color: #222;
-  color: #fff;
+  
 `;
 
 export const Navigation = styled.nav`
@@ -18,14 +18,23 @@ export const Navigation = styled.nav`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  height: 40px;
-
   li {
+    font-size: 1.1rem;
     margin-left: 25px;
+    color: #fff;
+
+    @media  (max-width: 512px){
+      font-size: 0.9rem;
+    }
+
+    img{
+      border-radius: 50%;
+      border: 1px solid #FFF;
+      cursor: pointer;
+    }
   }
 `;
 
 export const Logo = styled.div`
-  width: 100%;
+  
 `;
