@@ -12,6 +12,7 @@ export const Container = styled.div`
     justify-items: center;
     
   }
+
 `;
 
 export const Sign = styled.div`

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+
 import {
   Container,
   GoogleButton,
@@ -11,6 +12,7 @@ import {
 import { getSession, signIn } from "next-auth/react";
 import GoogleImage from "../assets/google-logo.png";
 import LinkedinImage from "../assets/linkedin-logo.png";
+
 
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
@@ -29,6 +31,7 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function Home() {
+
   function handleSignInGoogle() {
     signIn("google");
   }

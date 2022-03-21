@@ -1,4 +1,6 @@
-import { getSession, signOut, useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
+import Link from "next/link";
+
 
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
@@ -21,12 +23,10 @@ function test() {
     <div>
       <p>Dashboard</p>
       <p>{JSON.stringify(data)}</p>
-      <img src={data?.user.image} />
-      <button
-        onClick={() => signOut({ callbackUrl: "http://localhost:3000/" })}
-      >
-        Sign out
-      </button>
+
+      <Link href="/app/test">
+        <a>Home</a>
+      </Link>
     </div>
   );
 }
