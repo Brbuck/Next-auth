@@ -11,6 +11,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   color:#7a7672;
+  font-size: 0.9rem;
 
   p {
     font-size: 0.9rem;

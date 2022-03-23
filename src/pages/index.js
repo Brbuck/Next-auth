@@ -1,15 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import {useState} from "react";
 
 import {
   Container,
   CreateAccount,
+  EditInput,
   EmailButton,
   GoogleButton,
-  LinkedinButton,
   Frame,
+  LinkedinButton,
   Sign,
+  SignInButton,
+  SigninWithEmailAndPassword,
 } from "../styles/index";
 
 import { getSession, signIn } from "next-auth/react";
@@ -35,6 +39,11 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function Home() {
+  const [stateSign, setStateSign] = useState(false);
+
+  function togleSignIn (){
+    setStateSign(true)
+  }
   function handleSignInGoogle() {
     signIn("google");
   }
@@ -51,6 +60,21 @@ export default function Home() {
       <Sign>
         <h1>Welcome!</h1>
         <span>Sign in with your account to access our platform</span>
+        <SigninWithEmailAndPassword stateSign={stateSign}>
+          <div>
+            <label>E-mail</label>
+            <EditInput type="email" placeholder="email@email.com" />
+          </div>
+          <div>
+            <label>Password</label>
+            <EditInput type="password" placeholder="Enter your password here" />
+          </div>
+          <Link href="#">
+            <a>Forgot password?</a>
+          </Link>
+          <SignInButton>Acess account</SignInButton>
+          <p>Or</p>
+        </SigninWithEmailAndPassword>
         <GoogleButton onClick={handleSignInGoogle}>
           <Image src={GoogleImage} alt="Google Logo" width={18} height={16} />
           <p>Sign in with Google</p>
@@ -59,7 +83,7 @@ export default function Home() {
           <Image src={LinkedinImage} alt="Google Logo" width={18} height={16} />
           <p>Sign in with Linkeding</p>
         </LinkedinButton>
-        <EmailButton>
+        <EmailButton onClick={togleSignIn} stateSign={stateSign}>
           <Image src={EmailImage} alt="Google Logo" width={18} height={16} />
           <p>Sign in with email and password</p>
         </EmailButton>

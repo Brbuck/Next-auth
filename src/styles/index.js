@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../Components/Button";
+import Input from "../Components/Input";
 
 export const Container = styled.div`
   width: 100%;
@@ -40,10 +41,10 @@ export const Sign = styled.div`
     display: flex;
     align-items: center;
     margin-top: 20px;
-    
+
     p {
       color: #7a7672;
-      
+
       &:nth-child(1) {
         margin-right: 5px;
       }
@@ -55,9 +56,50 @@ export const Sign = styled.div`
   }
 `;
 
+export const SigninWithEmailAndPassword = styled.form`
+  display: ${({ stateSign }) => (stateSign ? "block" : "none")};
+  width: 100%;
+  height: auto;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+
+    label {
+      color: #7a7672;
+      margin-bottom: 5px;
+    }
+  }
+
+  a {
+    display: block;
+    color: #1e90ff;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  p{
+    text-align: center;
+    color: #7a7672;
+  }
+`;
+
+export const EditInput = styled(Input)`
+  border: 1px solid #7a7672;
+  border-radius: 6px;
+`;
+
+export const SignInButton = styled(Button)`
+  color: #fff;
+  margin-bottom: 15px;
+  background-color: #1e90ff;
+`;
+
 export const GoogleButton = styled(Button)`
   background-color: #fff;
-  margin-bottom: 15px;
+  margin: 15px 0px;
   border: 1px solid #7a7672;
 `;
 
@@ -65,23 +107,23 @@ export const LinkedinButton = styled(Button)`
   background-color: #1e90ff;
   margin-bottom: 15px;
 
-  p{
+  p {
     color: #fff;
   }
 `;
 
 export const EmailButton = styled(Button)`
+  display: ${({ stateSign }) => (stateSign ? "none" : "flex")};
   background-color: #fff;
   border: 1px solid #1e90ff;
   margin-bottom: 15px;
- 
 `;
 
 export const CreateAccount = styled.p`
   font-size: 0.9rem;
   color: #7a7672;
 
-  a{
+  a {
     margin-left: 6px;
     color: #1e90ff;
     font-weight: bold;
