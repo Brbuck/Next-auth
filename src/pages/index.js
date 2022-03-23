@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   Container,
+  CreateAccount,
+  EmailButton,
   GoogleButton,
   LinkedinButton,
   Frame,
@@ -12,7 +15,8 @@ import {
 import { getSession, signIn } from "next-auth/react";
 import GoogleImage from "../assets/google-logo.png";
 import LinkedinImage from "../assets/linkedin-logo.png";
-
+import EmailImage from "../assets/email-logo.png";
+import Logo from "../assets/auth.png";
 
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
@@ -31,7 +35,6 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function Home() {
-
   function handleSignInGoogle() {
     signIn("google");
   }
@@ -50,12 +53,27 @@ export default function Home() {
         <span>Sign in with your account to access our platform</span>
         <GoogleButton onClick={handleSignInGoogle}>
           <Image src={GoogleImage} alt="Google Logo" width={18} height={16} />
-          <span>Sign in with Google</span>
+          <p>Sign in with Google</p>
         </GoogleButton>
         <LinkedinButton onClick={handleSignInLinkedin}>
           <Image src={LinkedinImage} alt="Google Logo" width={18} height={16} />
-          <span>Sign in with Linkeding</span>
+          <p>Sign in with Linkeding</p>
         </LinkedinButton>
+        <EmailButton>
+          <Image src={EmailImage} alt="Google Logo" width={18} height={16} />
+          <p>Sign in with email and password</p>
+        </EmailButton>
+        <CreateAccount>
+          Don’t have an account yet?
+          <Link href="#">
+            <a>Create account</a>
+          </Link>
+        </CreateAccount>
+        <div>
+          <p>Powered by</p>
+          <Image src={Logo} alt="Google Logo" width={30} height={30} />
+          <p>Auth</p>
+        </div>
       </Sign>
       <Frame />
     </Container>
