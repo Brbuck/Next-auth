@@ -14,6 +14,7 @@ export default NextAuth({
         clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
       })
   ],
+ 
   session: {
     jwt: true,
   },

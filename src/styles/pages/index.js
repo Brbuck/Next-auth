@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Button from "../Components/Button";
-import Input from "../Components/Input";
+import Button from "../../Components/Button";
+import Input from "../../Components/Input";
 
 export const Container = styled.div`
   width: 100%;
@@ -54,6 +54,11 @@ export const Sign = styled.div`
       }
     }
   }
+
+  a{
+    color: #1e90ff;
+    font-weight: bold;
+  }
 `;
 
 export const SigninWithEmailAndPassword = styled.form`
@@ -71,6 +76,19 @@ export const SigninWithEmailAndPassword = styled.form`
       color: #7a7672;
       margin-bottom: 5px;
     }
+
+    p {
+      color: red;
+      margin-top: 3px;
+    }
+
+    .label-erro {
+      color: red;
+    }
+
+    .erros {
+      border: 1px solid red;
+    }
   }
 
   a {
@@ -80,7 +98,7 @@ export const SigninWithEmailAndPassword = styled.form`
     margin-bottom: 15px;
   }
 
-  p{
+  p {
     text-align: center;
     color: #7a7672;
   }
@@ -89,6 +107,10 @@ export const SigninWithEmailAndPassword = styled.form`
 export const EditInput = styled(Input)`
   border: 1px solid #7a7672;
   border-radius: 6px;
+
+  &:focus {
+    border: 1px solid #1e90ff;
+  }
 `;
 
 export const SignInButton = styled(Button)`
@@ -100,16 +122,16 @@ export const SignInButton = styled(Button)`
 export const GoogleButton = styled(Button)`
   background-color: #fff;
   margin: 15px 0px;
-  border: 1px solid ${({stateSign}) => stateSign ?  '#1e90ff' : '#7a7672' };
+  border: 1px solid ${({ stateSign }) => (stateSign ? "#1e90ff" : "#7a7672")};
 `;
 
 export const LinkedinButton = styled(Button)`
-  background-color: ${({stateSign}) => stateSign ?  '#FFF' : '#1e90ff' };
-  border: ${({stateSign}) => stateSign ?  '1px solid #1e90ff' : null};
+  background-color: ${({ stateSign }) => (stateSign ? "#FFF" : "#1e90ff")};
+  border: ${({ stateSign }) => (stateSign ? "1px solid #1e90ff" : null)};
   margin-bottom: 15px;
 
   p {
-    color: ${({stateSign}) => stateSign ?  '#7a7672' : '#FFF'};
+    color: ${({ stateSign }) => (stateSign ? "#7a7672" : "#FFF")};
   }
 `;
 
