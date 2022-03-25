@@ -5,7 +5,7 @@ import {useState} from "react";
 
 import {
   Container,
-  CreateAccount,
+  EnterYourAccount,
   EditInput,
   EmailButton,
   GoogleButton,
@@ -75,11 +75,11 @@ export default function Home() {
           <SignInButton>Acess account</SignInButton>
           <p>Or</p>
         </SigninWithEmailAndPassword>
-        <GoogleButton onClick={handleSignInGoogle}>
+        <GoogleButton onClick={handleSignInGoogle} stateSign={stateSign} >
           <Image src={GoogleImage} alt="Google Logo" width={18} height={16} />
           <p>Sign in with Google</p>
         </GoogleButton>
-        <LinkedinButton onClick={handleSignInLinkedin}>
+        <LinkedinButton onClick={handleSignInLinkedin} stateSign={stateSign}>
           <Image src={LinkedinImage} alt="Google Logo" width={18} height={16} />
           <p>Sign in with Linkeding</p>
         </LinkedinButton>
@@ -87,12 +87,12 @@ export default function Home() {
           <Image src={EmailImage} alt="Google Logo" width={18} height={16} />
           <p>Sign in with email and password</p>
         </EmailButton>
-        <CreateAccount>
+        <EnterYourAccount>
           Don’t have an account yet?
-          <Link href="#">
+          <Link href="/signup">
             <a>Create account</a>
           </Link>
-        </CreateAccount>
+        </EnterYourAccount>
         <div>
           <p>Powered by</p>
           <Image src={Logo} alt="Google Logo" width={30} height={30} />

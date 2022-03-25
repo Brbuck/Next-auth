@@ -100,15 +100,16 @@ export const SignInButton = styled(Button)`
 export const GoogleButton = styled(Button)`
   background-color: #fff;
   margin: 15px 0px;
-  border: 1px solid #7a7672;
+  border: 1px solid ${({stateSign}) => stateSign ?  '#1e90ff' : '#7a7672' };
 `;
 
 export const LinkedinButton = styled(Button)`
-  background-color: #1e90ff;
+  background-color: ${({stateSign}) => stateSign ?  '#FFF' : '#1e90ff' };
+  border: ${({stateSign}) => stateSign ?  '1px solid #1e90ff' : null};
   margin-bottom: 15px;
 
   p {
-    color: #fff;
+    color: ${({stateSign}) => stateSign ?  '#7a7672' : '#FFF'};
   }
 `;
 
@@ -119,7 +120,7 @@ export const EmailButton = styled(Button)`
   margin-bottom: 15px;
 `;
 
-export const CreateAccount = styled.p`
+export const EnterYourAccount = styled.p`
   font-size: 0.9rem;
   color: #7a7672;
 
