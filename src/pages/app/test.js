@@ -1,7 +1,9 @@
 import { getSession } from "next-auth/react";
 
+import { Container } from "../../styles/pages/app";
+
 function Test() {
-  return <div>Hello world!</div>;
+  return <Container>Hello world!</Container>;
 }
 
 export default Test;

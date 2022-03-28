@@ -1,6 +1,8 @@
 import { getSession, useSession } from "next-auth/react";
 import Link from "next/link";
 
+import { Container } from "../../styles/pages/app";
+
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
 
@@ -19,13 +21,13 @@ export async function getServerSideProps({ req }) {
 function test() {
   const { data } = useSession();
   return (
-    <div>
+    <Container>
       <p>Dashboard</p>
 
       <Link href="/app/test">
         <a>Home</a>
       </Link>
-    </div>
+    </Container>
   );
 }
 

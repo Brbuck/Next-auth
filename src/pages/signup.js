@@ -59,10 +59,10 @@ export default function signUp() {
 
   return (
     <Container>
-      <Sign onSubmit={handleSubmit(handleSignUp)}>
+      <Sign>
         <h1>The first step to apply</h1>
         <span>Create your account</span>
-        <CreateAccount>
+        <CreateAccount onSubmit={handleSubmit(handleSignUp)}>
           <div>
             <label className={errors.name ? "label-erro" : null}>Name *</label>
             <EditInput
@@ -131,22 +131,22 @@ export default function signUp() {
             <p>{errors.password && "Password is required"}</p>
           </div>
           <SignInButton type="submit">Sign Up</SignInButton>
-          <p style={{textAlign: "center"}}>Or</p>
-          <GoogleButton onClick={handleSignInGoogle} stateSign={true}>
-            <Image src={GoogleImage} alt="Google Logo" width={18} height={16} />
-            <p>Sign in with Google</p>
-          </GoogleButton>
-          <LinkedinButton onClick={handleSignInLinkedin} stateSign={true}>
-            <Image
-              src={LinkedinImage}
-              alt="Google Logo"
-              width={18}
-              height={16}
-            />
-            <p>Sign in with Linkeding</p>
-          </LinkedinButton>
+          <p style={{ textAlign: "center" }}>Or</p>
         </CreateAccount>
-        <span>Already have an account? <Link href='/'><a>Sign in with email and password</a></Link></span>
+        <GoogleButton onClick={handleSignInGoogle} stateSign={true}>
+          <Image src={GoogleImage} alt="Google Logo" width={18} height={16} />
+          <p>Sign in with Google</p>
+        </GoogleButton>
+        <LinkedinButton onClick={handleSignInLinkedin} stateSign={true}>
+          <Image src={LinkedinImage} alt="Google Logo" width={18} height={16} />
+          <p>Sign in with Linkeding</p>
+        </LinkedinButton>
+        <span>
+          Already have an account?{" "}
+          <Link href="/">
+            <a>Sign in with email and password</a>
+          </Link>
+        </span>
       </Sign>
       <Frame />
     </Container>
