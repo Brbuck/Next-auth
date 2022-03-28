@@ -1,4 +1,4 @@
-# Autenticação JWT com Next-JS
+# Autenticação com Next-Auth
 
 ![Captura de tela 2022-03-27 230922](https://user-images.githubusercontent.com/62665590/160314691-972c6384-33b1-4186-bf77-b895b4c19fa0.png)
 
@@ -6,9 +6,9 @@
 
 A autenticação é um recurso importante e sensível em aplicativos em que as credenciais de um usuário, como nome, email e senha, são validadas para confirmar se os usuários são quem dizem ser. Pensando nisso, criei um aplicativo Web utilizando Next-Auth, uma solução totalmente segura para implementar a autenticação em aplicativos Next.js.
 
-Há também a opção de utilizar a autenticação por email e senha, o desenvolvedor poderá facilmente integrar com o Back-end e adicionar outros providers de autenticação caso necessario. Por ultimo, uma página para o usuário criar uma conta.
+Há também a opção de utilizar a autenticação por email e senha, onde o desenvolvedor poderá facilmente integrar com o Back-end e adicionar outros providers de autenticação caso necessario. Por ultimo, uma página para o usuário criar uma conta.
 
-Esse projeto pode ser utilizado em outros varios aplicativos, desde sites simples á plataformas maiores.
+Esse projeto pode ser utilizado desde sites simples á plataformas maiores.
 
 ### Tecnologias
 
