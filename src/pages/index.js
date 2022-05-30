@@ -93,11 +93,10 @@ export default function Home() {
             <EditInput
               className={errors.password ? "erros" : null}
               type="password"
-              type="password"
-              {...register("password", { required: true })}
+              {...register("passwords", { required: true })}
               placeholder="Enter your password here"
             />
-            <p>{errors.password && "Password is required"}</p>
+            <p>{errors.passwords && "Password is required"}</p>
           </div>
           <Link href="#">
             <a>Forgot password?</a>

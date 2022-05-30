@@ -18,7 +18,7 @@ export async function getServerSideProps({ req }) {
     props: {}, // will be passed to the page component as props
   };
 }
-function test() {
+function Test() {
   const { data } = useSession();
   return (
     <Container>
@@ -31,4 +31,4 @@ function test() {
   );
 }
 
-export default test;
+export default Test;

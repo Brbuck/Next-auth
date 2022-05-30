@@ -22,7 +22,7 @@ function Header() {
           <Image src={Icon} alt="Google Logo" width={35} height={30} />
         </Logo>
         <Navigation>
-          <li>Welcome back {data?.user?.name}</li>
+          <li>Welcome back {data?.user?.name.split(" ", 1)}</li>
           <li>
             <img
               onClick={togleShowModalUser}

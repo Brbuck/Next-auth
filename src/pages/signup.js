@@ -35,7 +35,7 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-export default function signUp() {
+export default function SignUp() {
   const {
     register,
     formState: { errors },
