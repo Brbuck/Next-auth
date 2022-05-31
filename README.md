@@ -1,5 +1,7 @@
 # Autenticação com Next-Auth
 
+[Link da aplicação](https://next-auth-ruby.vercel.app/)
+
 ![Captura de tela 2022-03-27 230922](https://user-images.githubusercontent.com/62665590/160314691-972c6384-33b1-4186-bf77-b895b4c19fa0.png)
 
 ## Sobre o projeto
